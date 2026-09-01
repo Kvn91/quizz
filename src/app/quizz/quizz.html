@@ -1,0 +1,35 @@
+<h1>WELCOME TO THE QUIZZZZZ</h1>
+<section id="quizz">
+  @if (!isBegan()) {
+    <p>Respond quick quick to these 3 questions and win... something :3</p>
+    <button class="btn" (click)="onStartQuizz()">START</button>
+  } @else if (isFinished()) {
+    <div>
+      <h1>TERMINÉ</h1>
+    </div>
+  } @else {
+    <form [formGroup]="quizzForm" (ngSubmit)="onAnswer()">
+      <fieldset>
+        <div class="legend">
+          <legend>{{ currentQuestion().question.title }}</legend>
+        </div>
+        <div class="answers" formArrayName="answers">
+          @for (option of currentQuestion().question.options; track $index; let i = $index) {
+            <label
+              [class.selected]="option === answers.value[currentQuestion().index]"
+              (click)="onClickOption(option, $event)"
+            >
+              {{ option }}</label
+            >
+          }
+          <button class="btn">Answer</button>
+        </div>
+      </fieldset>
+    </form>
+    <div class="points-counter">
+      @for (item of questionsList(); track $index) {
+        <div [class]="'fire-circle' + pointsCounterClasses($index)"></div>
+      }
+    </div>
+  }
+</section>

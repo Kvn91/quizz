@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Quel est le cri de l'éléphant ?",
+    "options": [
+      "Le barrissement",
+      "L'aboiement",
+      "Le miaulementmiaulementmiaulement miaulementmiaulementmiaulement "
+    ],
+    "answer": "Le barrissement"
+  },
+  {
+    "title": "Blabla 2 ?",
+    "options": ["answer 1", "answer 2", "answer 3"],
+    "answer": "answer 2"
+  },
+  {
+    "title": "Blabla 3 ?",
+    "options": ["answer 1", "answer 2", "answer 3"],
+    "answer": "answer 1"
+  }
+]
